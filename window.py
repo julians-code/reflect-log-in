@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QWidget, QTextEdit, QVBoxLayout, QLabel, QRadioButton, QHBoxLayout
-from config import MW_TITLE, MW_HEIGHT, MW_WIDTH, FOCUSED_QUESTION, KNOW_NEXT_STEP_QUESTION, DOING_QUESTION
+from PySide6.QtWidgets import QPushButton, QWidget, QTextEdit, QVBoxLayout, QLabel, QRadioButton, QHBoxLayout
+from config import MW_TITLE, MW_HEIGHT, MW_WIDTH, FOCUSED_QUESTION, KNOW_NEXT_STEP_QUESTION, DOING_QUESTION, DOING_PLACEHOLDER
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -29,12 +29,12 @@ class MainWindow(QWidget):
         layout.addWidget(doing_label)
 
         self.doing = QTextEdit()
-        self.doing.setPlaceholderText("Apply to jobs / Write an email")
+        self.doing.setPlaceholderText(DOING_PLACEHOLDER)
         self.doing.setFixedHeight(100)
 
         layout.addWidget(self.doing)
 
-        # know next step?
+        # "Do you know the next step?" question
         self.know_next_step_label = QLabel(KNOW_NEXT_STEP_QUESTION)
         layout.addWidget(self.know_next_step_label)
 
@@ -47,6 +47,17 @@ class MainWindow(QWidget):
         inner_layout.addWidget(self.not_know_button)
         layout.addWidget(inner_container)
 
+        # Submit button
+        self.submit_button = QPushButton("Submit")
+        self.submit_button.clicked.connect(self.submit_value)
+        layout.addWidget(self.submit_button)
+
         content = QWidget()
         content.setLayout(layout)
         self.setLayout(layout)
+
+    def submit_value(self):
+        """
+        Closes the window.
+        """
+        self.close()
