@@ -9,8 +9,10 @@ os.environ["QT_LOGGING_RULES"] = "*=false"
 
 def main():
     app = QApplication(argv)
+
     window = MainWindow()
     window.show()
+
     app.exec()
 
 
