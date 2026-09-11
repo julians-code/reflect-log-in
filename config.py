@@ -4,6 +4,8 @@ from pathlib import Path
 MW_TITLE = "Reflect Log-In"
 MW_HEIGHT = 500
 MW_WIDTH = 400
+MW_STYLESHEET = ("background-color: #1a364a;"
+                 "color: #f9ce10;")
 
 # Reflection timer buttons
 REFLECTION_TIMERS = [
@@ -11,6 +13,8 @@ REFLECTION_TIMERS = [
     ("5m", 5),
     ("10m", 10),
     ("15m", 15),
+    ("30m", 30),
+    ("60m", 60),
 ]
 
 # Questions
@@ -31,5 +35,5 @@ REFLECTION_ENTRIES_FILE = DATA_DIR / "reflection_entries.json"
 #    VENV_PYTHON: absolute path to python inside the .venv/bin
 #                 example: VENV_PYTHON = "/home/you/projects/reflect-log-in/.venv/bin/python"
 
-APP_DIR = "/home/your-user/reflect-log-in"
-VENV_PYTHON = "/home/your-user/reflect-log-in/.venv/bin/python"
+APP_DIR = "/home/julian/Documents/z/pers/cresc/projects/code/reflect-log-in"
+VENV_PYTHON = "/home/julian/Documents/z/pers/cresc/projects/code/reflect-log-in/.venv/bin/python"

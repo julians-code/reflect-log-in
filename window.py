@@ -13,6 +13,7 @@ from config import (
     MW_TITLE,
     MW_HEIGHT,
     MW_WIDTH,
+    MW_STYLESHEET,
     FOCUSED_QUESTION,
     KNOW_NEXT_STEP_QUESTION,
     DOING_QUESTION,
@@ -31,6 +32,7 @@ class MainWindow(QWidget):
 
         self.setWindowTitle(MW_TITLE)
         self.resize(MW_WIDTH, MW_HEIGHT)
+        self.setStyleSheet(MW_STYLESHEET)
 
         self.store = JSONStore()
 
